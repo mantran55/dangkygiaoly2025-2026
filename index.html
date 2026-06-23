@@ -1,482 +1,312 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang=vi>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Đăng ký Giáo lý 2025-2026</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Đăng ký Giáo lý 2025-2026</title>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css rel=stylesheet>
+<link rel=stylesheet href=styles.css>
+<link rel=icon href=assets/favicon.ico type=image/x-icon>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel=stylesheet>
 </head>
 <body>
-
-  <!-- Overlay: Hết thời gian đăng ký -->
-    <div id="closedOverlay" class="closed-overlay" hidden>
-    <div class="closed-card">
-      <div class="icon-wrap lock" id="lockTrigger" >
-      <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.7">
-        <rect x="3.5" y="10" width="17" height="11" rx="2.2"></rect>
-        <path d="M7.5 10V7.2a4.5 4.5 0 0 1 9 0V10"></path>
-        <circle cx="12" cy="15.5" r="1.5"></circle>
-      </svg>
-    </div>
-      <h3>ĐÃ HẾT THỜI GIAN ĐĂNG KÝ</h3>
-      <p class="sub">
-        Hệ thống mở từ <span id="openTimeText">24/08</span> đến <span id="closeTimeText">29/08</span>.
-      </p>
-
-      <div class="actions">
-        <button id="btnClosedViewList" class="btn primary">Xem danh sách</button>
-      </div>
-
-      <p class="note">Cần hỗ trợ? Vui lòng liên hệ BTS Ban Thiếu Nhi Giáo xứ.</p>
-    </div>
-  </div>
-
-  <div class="form-container">
-    <div class="header">
-    <div class="header-content">
-      <div class="logo-container">
-        <img id="logo" src="assets/logoTNTTBH.png" alt="Logo Giáo Xứ Biên Hoà">
-      </div>
-      <div class="title-container">
-        <div class="title-main">
-          <h1>ĐĂNG KÝ GIÁO LÝ 2025-2026</h1>
-        </div>
-        <h2>GIÁO XỨ BIÊN HOÀ</h2>
-        <p class="subtitle">Xin Anh Chị GLV nhập các thông tin thật chính xác dựa vào sổ GĐCG. Xin cảm ơn!</p>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="form-content">
-      <form id="registrationForm">
-        <div class="section registration-section">
-          <div class="section-title"><i class="fas fa-graduation-cap"></i> Đăng ký khối</div>
-          <div class="form-group">
-            <label-1>Chọn khối đăng ký:</label-1>
-            <div class="radio-group">
-              <div class="radio-item">
-                <input type="radio" id="khaiTam" name="registrationGroup" value="Khai Tâm" required>
-                <label for="khaiTam" style="background-color: #e17c8d; padding: 5px 10px; border-radius: 4px; font-weight: bold;color: white;">Khai Tâm</label>
-              </div>
-              <div class="radio-item">
-                <input type="radio" id="xungToiRuocLe" name="registrationGroup" value="Xưng Tội Rước Lễ">
-                <label for="xungToiRuocLe" style="background-color: #3e913e; padding: 5px 10px; border-radius: 4px; font-weight: bold;color: white;">Xưng Tội Rước Lễ</label>
-              </div>
-              <div class="radio-item">
-                <input type="radio" id="themSuc" name="registrationGroup" value="Thêm Sức">
-                <label for="themSuc" style="background-color: #39709a; padding: 5px 10px; border-radius: 4px; font-weight: bold;color: white;">Thêm Sức</label>
-              </div>
-              <div class="radio-item">
-                <input type="radio" id="songDao" name="registrationGroup" value="Sống Đạo">
-                <label for="songDao" style="background-color: #f4d108; padding: 5px 10px; border-radius: 4px; font-weight: bold;color: white;">Sống Đạo</label>
-              </div>
-              <div class="radio-item">
-                <input type="radio" id="vaoDoi" name="registrationGroup" value="Vào Đời">
-                <label for="vaoDoi" style="background-color: #9f7641; padding: 5px 10px; border-radius: 4px; font-weight: bold; color: white;">Vào Đời</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="section">
-          <div class="section-title"><i class="fas fa-user"></i> Thông Tin Cá Nhân</div>
-          <div class="form-group">
-            <label-1 for="name">Tên Thánh, Họ và tên:</label-1>
-            <input type="text" id="name" required placeholder="Đaminh Trần Đình Minh Mẫn">
-          </div>
-          <div class="form-group">
-            <label-1 for="dob">Ngày sinh:</label-1>
-            <input type="text" id="dob" placeholder="Nếu 5/11/2003 thì nhập 05112003" required inputmode="numeric">
-          </div>
-          <div class="form-group">
-            <label-1>Nơi Sinh:</label-1>
-            <div class="location-group">
-              <div class="location-options">
-                <div class="checkbox-item">
-                  <input type="checkbox" id="birthPlace1" name="birthPlace" value="Đồng Nai" >
-                  <label for="birthPlace1">Đồng Nai</label>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" id="birthPlace2" name="birthPlace" value="TP HCM">
-                  <label for="birthPlace2">TP HCM</label>
-                </div>
-              </div>
-              <div class="location-text autocomplete-container">
-                <input type="text" id="birthPlaceOther" class="location-input" placeholder="Nhập hoặc chọn tỉnh/thành khác">
-                <div id="birthPlaceSuggestions" class="autocomplete-suggestions"></div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label-1>Giới tính:</label-1>
-            <div class="radio-group">
-              <div class="radio-item">
-                <input type="radio" id="male" name="gender" value="Nam" required>
-                <label for="male">Nam</label>
-              </div>
-              <div class="radio-item">
-                <input type="radio" id="female" name="gender" value="Nữ">
-                <label for="female">Nữ</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Thông Tin Rửa Tội - Luôn hiển thị -->
-        <div class="section baptism-section">
-          <div class="section-title"><i class="fas fa"></i>1. Thông Tin Rửa Tội</div>
-          <div class="form-group">
-            <label-1>Ngày rửa tội:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="notBaptized">
-              <label for="notBaptized">Chưa rửa tội</label>
-            </div>
-           <input type="text" id="baptismDate" placeholder="Nếu 5/11/2003 thì nhập 05112003" inputmode="numeric">
-          </div>
-          <div class="form-group">
-            <label-1>Sổ Rửa tội:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="baptismBookNot">
-              <label for="baptismBookNot">Chưa rửa tội</label>
-            </div>
-            <input type="text" id="baptismBook" placeholder="GLV nhập số sổ rửa tội">
-          </div>
-          <div class="form-group">
-            <label-1>Nơi Rửa Tội:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="baptismPlaceNot">
-              <label for="baptismPlaceNot">Chưa rửa tội</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="baptismPlaceBienHoa" value="Giáo Xứ Biên Hoà">
-              <label for="baptismPlaceBienHoa">Giáo Xứ Biên Hoà</label>
-            </div>
-            <div class="location-text">
-              <span class="location-prefix">Giáo Xứ</span>
-              <input type="text" id="baptismPlaceOther" class="location-input-2" placeholder="Chỉ nhập tên giáo xứ">
-            </div>
-          </div>
-        </div>
-        
-        <!-- ====== THÔNG TIN XƯNG TỘI RƯỚC LỄ ====== -->
-        <div id="xtrlSection" class="section baptismdf-section" style="display:none;">
-          <div class="section-title">
-            <i class="fas fa"></i>2. Thông Tin Xưng Tội Rước Lễ
-          </div>
-          <!-- Ngày XTRLLĐ -->
-          <div class="form-group">
-            <label-1>Ngày XTRLLĐ:</label-1>
-           <input type="text" id="xtrlDate" placeholder="Nếu 5/11/2003 thì nhập 05112003" inputmode="numeric">
-          </div>
-          <!-- Nơi XTRLLĐ -->
-          <div class="form-group">
-            <label-1>Nơi XTRLLĐ:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="xtrlPlaceBienHoa" value="Giáo Xứ Biên Hoà">
-              <label for="xtrlPlaceBienHoa">Giáo Xứ Biên Hoà</label>
-            </div>
-            <div class="location-text">
-              <span class="location-prefix">Giáo Xứ</span>
-              <input type="text" id="xtrlPlaceOther" class="location-input-2" placeholder="Chỉ nhập tên giáo xứ">
-            </div>
-          </div>
-        </div>
-        
-        <!-- ====== THÔNG TIN THÊM SỨC ====== -->
-        <div id="themSucInfoSection" class="section communion-section" style="display:none;">
-          <div class="section-title">
-            <i class="fas fa"></i>3. Thông Tin Thêm Sức
-          </div>
-          <div class="form-group">
-            <label-1>Ngày Thêm Sức:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="notThemSuc">
-              <label for="notThemSuc">Chưa Thêm Sức</label>
-            </div>
-           <input type="text" id="themSucDate" placeholder="Nếu 5/11/2003 thì nhập 05112003" inputmode="numeric">
-          </div>
-          <div class="form-group">
-            <label-1>Sổ Thêm Sức:</label-1>
-            <input type="text" id="themSucBook" placeholder="GLV nhập số sổ thêm sức">
-          </div>
-          <div class="form-group">
-            <label-1>Nơi Thêm Sức:</label-1>
-            <div class="checkbox-item">
-              <input type="checkbox" id="themSucPlaceNot">
-              <label for="themSucPlaceNot">Chưa Thêm Sức</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="themSucPlaceBienHoa" value="Giáo Xứ Biên Hoà">
-              <label for="themSucPlaceBienHoa">Giáo Xứ Biên Hoà</label>
-            </div>
-            <div class="location-text">
-              <span class="location-prefix">Giáo Xứ</span>
-              <input type="text" id="themSucPlaceOther" class="location-input-2" placeholder="Chỉ nhập tên giáo xứ">
-            </div>
-          </div>
-        </div>
-        
-        <div class="section">
-          <div class="section-title"><i class="fas fa-users"></i> Thông Tin Gia Đình</div>
-          <div class="form-group">
-            <label-1 for="fatherName">Tên Thánh, Họ và tên Cha:</label-1>
-            <input type="text" id="fatherName" required placeholder="Đaminh Trần Đình Minh Mẫn">
-          </div>
-          <div class="form-group">
-            <label-1 for="motherName">Tên Thánh, Họ và tên Mẹ:</label-1>
-            <input type="text" id="motherName" required placeholder="Maria Trần Đình Minh A">
-          </div>
-          <div class="form-group">
-            <label-1 for="parish">Giáo họ:</label-1>
-            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-              <select id="parish" required>
-                <option value="">-- Chọn giáo họ --</option>
-                <option>-Ngoài Xứ-</option>
-                <option>1. Andrê</option>
-                <option>2. Batôlômêô</option>
-                <option>3. Giacôbê Hậu</option>
-                <option>4. Giacôbê Tiền</option>
-                <option>5. Gioan</option>
-                <option>6. Matthêu</option>
-                <option>7. Matthia</option>
-                <option>8. Phaolô</option>
-                <option>10. Philiphê</option>
-                <option>11. Simon</option>
-                <option>12. Tađêô</option>
-                <option>13. Tôma</option>
-              </select>
-              <label for="text">Xem số ở đầu sổ GDCG và chọn giáo họ tương ứng</label> 
-              <img src="assets/giao-ho-1.png" alt="Ảnh 1" style="max-width:100%; border-radius:6px;">
-              <p style="margin-top:6px">
-                <a href="#" id="openParishModal">Xem nếu không có số Giáo họ</a>
-              </p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label-1 for="fatherPhone">Số điện thoại Cha:</label-1>
-            <input type="tel" id="fatherPhone" required placeholder="0908123456" inputmode="numeric">
-          </div>
-          <div class="form-group">
-            <label-1 for="motherPhone">Số điện thoại Mẹ:</label-1>
-           <input type="tel" id="motherPhone" required placeholder="0908123456" inputmode="numeric">
-          </div>
-          <div class="form-group">
-            <label-1 for="address">Địa chỉ nhà:</label-1>
-            <input type="text" id="address" required placeholder="Nhập địa chỉ">
-          </div>
-        </div>
-        
-        <div class="section class-section">
-          <div class="section-title"><i class="fas fa-church"></i> Xếp Lớp Năm Học Mới</div>
-          <div class="form-group">
-            <label-1 required for="classRegistration">Chọn lớp:</label-1>
-            <select id="classRegistration" disabled>
-              <option value="">Vui lòng chọn khối đăng ký trước</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label-1 for="nameGLV">GLV nhập liệu:</label-1>
-            <input type="text" id="nameGLV" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label-1 for="notes">Ghi chú:</label-1>
-          <textarea id="notes" rows="3" placeholder="Nhập ghi chú (nếu có)"></textarea>
-        </div>
-        
-        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Gửi Đăng Ký</button>
-      </form>
-      
-      <div id="message" class="message"></div>
-    </div>
-  </div>
-
-  <div id="parishModal" class="modal-overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="parishModalTitle">
-      <button type="button" class="modal-close" aria-label="Đóng">&times;</button>
-      <h3 id="parishModalTitle">TRƯỜNG HỢP KHÔNG CÓ SỐ</h3>
-      <a href="assets/giao-ho-2.png" data-lightbox="parishGallery" data-title="Ảnh 1: Mẫu sổ giáo họ">
-        <img src="assets/giao-ho-2.png" alt="Ảnh" style="max-width:100%; border-radius:6px;">
-      </a>
-    </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script src="app.js"></script>
-    <div class="corner-image-container desktop-only">
-    <img src="assets/corner-image.png" alt="Hình góc dưới phải">
-    
-    <button class="list-button" title="Xem danh sách" id="showRegistrationList">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-      </svg>
-      
-    </button>
-  </div>
-
-
-    <div id="registrationModal" class="modal-overlay">
-      <div class="modal-content">
-        <div class="modal-header">
-          <!-- BÊN TRÁI: Tiêu đề + Thống kê -->
-          <div class="header-left">
-            <h2>DANH SÁCH ĐĂNG KÝ THÀNH CÔNG</h2>
-
-            <!-- Thống kê -->
-            <div id="statsContainer" class="stats-card">
-              <div class="stats-controls">
-                <label-3 for="khoiSelect">Khối:</label-3>
-                <select id="khoiSelect">
-                  <option value="">Tất cả</option>
-                </select>
-                <div class="stats-meta">Tổng: 0 bản ghi</div>
-              </div>
-              <div class="stats-chips"></div>
-            </div>
-          </div>
-
-          <!-- BÊN PHẢI: ô tìm kiếm + nút -->
-          <div class="header-controls">
-            <div class="search-container">
-              <input type="text" id="searchInput" placeholder="Tìm kiếm thông tin...">
-            </div>
-            <button id="scrollToTopButton" class="scroll-button" title="Cuộn lên đầu">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="18 15 12 9 6 15"></polyline>
-              </svg>
-            </button>
-            <button id="reloadButton" class="reload-button" title="Tải lại danh sách">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 4v6h-6"></path>
-                <path d="M1 20v-6h6"></path>
-                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-              </svg>
-            </button>
-            <span class="close-button">&times;</span>
-          </div>
-        </div>
-
-        <div class="modal-body">
-          <div id="registrationList">
-          </div>
-        </div>
-      </div>
-    </div>
-  <script src="registration.js"></script>
-  
-  <script>
-/* ===== CẤU HÌNH THỜI GIAN (giờ VN) ===== */
-const REG_OPEN_AT  = new Date('2025-08-24T00:00:00+07:00');
-const REG_CLOSE_AT = new Date('2025-08-29T23:59:59+07:00');
-
-/* Ép trạng thái nếu cần: 'open' | 'closed' | null */
-const FORCE_MODE = 'closed'; // null để dùng thời gian thật
-
-function vnFormat(dt){
-  const pad = n => String(n).padStart(2,'0');
-  return `${pad(dt.getDate())}/${pad(dt.getMonth()+1)}/${dt.getFullYear()} ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
-}
-function isClosedNow(){
-  if (FORCE_MODE === 'open') return false;
-  if (FORCE_MODE === 'closed') return true;
-  const now = new Date();
-  return !(now >= REG_OPEN_AT && now <= REG_CLOSE_AT);
-}
-function setFormDisabled(disabled){
-  const form = document.getElementById('registrationForm');
-  if (!form) return;
-  form.querySelectorAll('input, select, textarea, button').forEach(el => {
-    if (el.id === 'showRegistrationList') return; // nút xem danh sách nằm ngoài form
-    el.disabled = !!disabled;
-  });
-}
-function showClosedOverlay(){
-  const overlay = document.getElementById('closedOverlay');
-  if (!overlay) return;
-  document.getElementById('openTimeText').textContent  = vnFormat(REG_OPEN_AT);
-  document.getElementById('closeTimeText').textContent = vnFormat(REG_CLOSE_AT);
-  overlay.hidden = false;
-  document.body.classList.add('closed');
-  setFormDisabled(true);
-
-  // Bấm "Xem danh sách": ẩn overlay tạm thời rồi mở modal
-  const btnList = document.getElementById('btnClosedViewList');
-  if (btnList) btnList.onclick = () => {
-    overlay.hidden = true; // ẩn trong lúc xem
-    const trigger = document.getElementById('showRegistrationList');
-    if (trigger) trigger.click();
-    else {
-      const modal = document.getElementById('registrationModal');
-      if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-  };
-
-  // Khi modal đóng → hiện overlay lại nếu vẫn đang “hết thời gian”
-  ensureOverlayReturnsOnModalClose();
-}
-function hideClosedOverlay(){
-  const overlay = document.getElementById('closedOverlay');
-  if (!overlay) return;
-  overlay.hidden = true;
-  document.body.classList.remove('closed');
-  setFormDisabled(false);
-}
-function ensureOverlayReturnsOnModalClose(){
-  const overlay = document.getElementById('closedOverlay');
-  const modal   = document.getElementById('registrationModal');
-  const closeBtn= document.querySelector('.close-button');
-  if (!overlay || !modal) return;
-
-  const reShow = () => { if (isClosedNow()) overlay.hidden = false; };
-
-  // Click nút đóng
-  if (closeBtn) closeBtn.addEventListener('click', () => setTimeout(reShow, 0));
-
-  // Click ra nền để đóng
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) setTimeout(reShow, 0);
-  });
-
-  // Trường hợp đóng bằng code/phím → quan sát class
-  const obs = new MutationObserver(muts => {
-    muts.forEach(m => {
-      if (m.attributeName === 'class' && !modal.classList.contains('active')) reShow();
-    });
-  });
-  obs.observe(modal, { attributes: true });
-}
-function evaluateWindow(){
-  if (isClosedNow()) showClosedOverlay();
-  else hideClosedOverlay();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  evaluateWindow();
-  window.addEventListener('pageshow', (e) => { if (e.persisted) evaluateWindow(); });
-});
-</script>
-
-
-
-
+<div class=bg-overlay></div>
+<div class=form-container>
+<div class=header>
+<div class=header-content>
+<div class=logo-container>
+<img id=logo src=assets/logoTNTTBH.png alt="Logo Giáo Xứ Biên Hoà">
+</div>
+<div class=title-container>
+<div class=title-main>
+<h1>ĐĂNG KÝ GIÁO LÝ 2025-2026</h1>
+</div>
+<h2>GIÁO XỨ BIÊN HOÀ</h2>
+<p class=subtitle>Xin Anh Chị GLV nhập các thông tin thật chính xác dựa vào sổ GĐCG. Xin cảm ơn!</p>
+</div>
+</div>
+</div>
+<div class=form-content>
+<form id=registrationForm>
+<div class="section red-theme registration-section">
+<div class=section-title><i class="fas fa-graduation-cap"></i> Đăng ký khối</div>
+<div class=form-group>
+<label-1>Chọn khối đăng ký:</label-1>
+<div class="radio-group premium-radio">
+<div class=radio-item>
+<input type=radio id=khaiTam name=registrationGroup value="Khai Tâm" required>
+<label for=khaiTam>Khai Tâm</label>
+</div>
+<div class=radio-item>
+<input type=radio id=xungToiRuocLe name=registrationGroup value="Xưng Tội Rước Lễ">
+<label for=xungToiRuocLe>Xưng Tội Rước Lễ</label>
+</div>
+<div class=radio-item>
+<input type=radio id=themSuc name=registrationGroup value="Thêm Sức">
+<label for=themSuc>Thêm Sức</label>
+</div>
+<div class=radio-item>
+<input type=radio id=songDao name=registrationGroup value="Sống Đạo">
+<label for=songDao>Sống Đạo</label>
+</div>
+<div class=radio-item>
+<input type=radio id=vaoDoi name=registrationGroup value="Vào Đời">
+<label for=vaoDoi>Vào Đời</label>
+</div>
+</div>
+</div>
+</div>
+<div class="section blue-theme">
+<div class=section-title><i class="fas fa-user"></i> Thông Tin Cá Nhân</div>
+<div class=form-group>
+<label-1 for=name>Tên Thánh, Họ và tên:</label-1>
+<input id=name required placeholder="Đaminh Trần Đình Minh Mẫn">
+</div>
+<div class=form-row>
+<div class=form-group>
+<label-1 for=dob>Ngày sinh:</label-1>
+<input id=dob placeholder=05112003 required inputmode=numeric>
+</div>
+<div class=form-group>
+<label-1>Giới tính:</label-1>
+<div class="radio-group premium-radio small">
+<div class=radio-item>
+<input type=radio id=male name=gender value=Nam required>
+<label for=male>Nam</label>
+</div>
+<div class=radio-item>
+<input type=radio id=female name=gender value=Nữ>
+<label for=female>Nữ</label>
+</div>
+</div>
+</div>
+</div>
+<div class=form-group>
+<label-1>Nơi Sinh:</label-1>
+<div class=location-group>
+<div class=location-options>
+<div class="checkbox-item premium-checkbox">
+<input type=checkbox id=birthPlace1 name=birthPlace value="Đồng Nai">
+<label for=birthPlace1>Đồng Nai</label>
+</div>
+<div class="checkbox-item premium-checkbox">
+<input type=checkbox id=birthPlace2 name=birthPlace value="TP HCM">
+<label for=birthPlace2>TP HCM</label>
+</div>
+</div>
+<div class="location-text autocomplete-container">
+<input id=birthPlaceOther class=location-input placeholder="Nhập hoặc chọn tỉnh/thành khác">
+<div id=birthPlaceSuggestions class=autocomplete-suggestions></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section red-theme baptism-section">
+<div class=section-title><i class="fas fa-droplet"></i>1. Thông Tin Rửa Tội</div>
+<div class=form-group>
+<div class="checkbox-item premium-checkbox main-checkbox">
+<input type=checkbox id=notBaptized>
+<label for=notBaptized>Tích vào đây nếu CHƯA RỬA TỘI</label>
+</div>
+</div>
+<div class=form-row>
+<div class=form-group>
+<label-1>Ngày rửa tội:</label-1>
+<input id=baptismDate placeholder=05112003 inputmode=numeric>
+</div>
+<div class=form-group>
+<label-1>Sổ Rửa tội:</label-1>
+<input id=baptismBook placeholder="Số sổ rửa tội">
+</div>
+</div>
+<div class=form-group>
+<label-1>Nơi Rửa Tội:</label-1>
+<div class="checkbox-item premium-checkbox">
+<input type=checkbox id=baptismPlaceBienHoa value="Giáo Xứ Biên Hoà">
+<label for=baptismPlaceBienHoa>Giáo Xứ Biên Hoà</label>
+</div>
+<div class="location-text input-prefix-group">
+<span class=location-prefix>Giáo Xứ</span>
+<input id=baptismPlaceOther class=location-input-2 placeholder="Chỉ nhập tên giáo xứ">
+</div>
+</div>
+</div>
+<div id=xtrlSection class="section blue-theme baptismdf-section" style=display:none>
+<div class=section-title><i class="fas fa-bread-slice"></i>2. Thông Tin Xưng Tội Rước Lễ</div>
+<div class=form-group>
+<label-1>Ngày XTRLLĐ:</label-1>
+<input id=xtrlDate placeholder=05112003 inputmode=numeric>
+</div>
+<div class=form-group>
+<label-1>Nơi XTRLLĐ:</label-1>
+<div class="checkbox-item premium-checkbox">
+<input type=checkbox id=xtrlPlaceBienHoa value="Giáo Xứ Biên Hoà">
+<label for=xtrlPlaceBienHoa>Giáo Xứ Biên Hoà</label>
+</div>
+<div class="location-text input-prefix-group">
+<span class=location-prefix>Giáo Xứ</span>
+<input id=xtrlPlaceOther class=location-input-2 placeholder="Chỉ nhập tên giáo xứ">
+</div>
+</div>
+</div>
+<div id=themSucInfoSection class="section red-theme communion-section" style=display:none>
+<div class=section-title><i class="fas fa-fire"></i>3. Thông Tin Thêm Sức</div>
+<div class=form-group>
+<div class="checkbox-item premium-checkbox main-checkbox">
+<input type=checkbox id=notThemSuc>
+<label for=notThemSuc>Tích vào đây nếu CHƯA THÊM SỨC</label>
+</div>
+</div>
+<div class=form-row>
+<div class=form-group>
+<label-1>Ngày Thêm Sức:</label-1>
+<input id=themSucDate placeholder=05112003 inputmode=numeric>
+</div>
+<div class=form-group>
+<label-1>Sổ Thêm Sức:</label-1>
+<input id=themSucBook placeholder="Số sổ thêm sức">
+</div>
+</div>
+<div class=form-group>
+<label-1>Nơi Thêm Sức:</label-1>
+<div class="checkbox-item premium-checkbox">
+<input type=checkbox id=themSucPlaceBienHoa value="Giáo Xứ Biên Hoà">
+<label for=themSucPlaceBienHoa>Giáo Xứ Biên Hoà</label>
+</div>
+<div class="location-text input-prefix-group">
+<span class=location-prefix>Giáo Xứ</span>
+<input id=themSucPlaceOther class=location-input-2 placeholder="Chỉ nhập tên giáo xứ">
+</div>
+</div>
+</div>
+<div class="section blue-theme">
+<div class=section-title><i class="fas fa-users"></i> Thông Tin Gia Đình</div>
+<div class=form-row>
+<div class=form-group>
+<label-1 for=fatherName>Tên Thánh, Họ và tên Cha:</label-1>
+<input id=fatherName required placeholder="Đaminh Trần Đình Minh Mẫn">
+</div>
+<div class=form-group>
+<label-1 for=motherName>Tên Thánh, Họ và tên Mẹ:</label-1>
+<input id=motherName required placeholder="Maria Trần Đình Minh A">
+</div>
+</div>
+<div class=form-group>
+<label-1 for=parish>Giáo họ:</label-1>
+<div class=form-inline>
+<select id=parish required>
+<option value="">-- Chọn giáo họ --</option>
+<option>-Ngoài Xứ-</option>
+<option>1. Andrê</option>
+<option>2. Batôlômêô</option>
+<option>3. Giacôbê Hậu</option>
+<option>4. Giacôbê Tiền</option>
+<option>5. Gioan</option>
+<option>6. Matthêu</option>
+<option>7. Matthia</option>
+<option>8. Phaolô</option>
+<option>10. Philiphê</option>
+<option>11. Simon</option>
+<option>12. Tađêô</option>
+<option>13. Tôma</option>
+</select>
+<img src=assets/giao-ho-1.png alt="Hướng dẫn" class=inline-img>
+<a href=# id=openParishModal class=link>Xem nếu không có số</a>
+</div>
+</div>
+<div class=form-row>
+<div class=form-group>
+<label-1 for=fatherPhone>SĐT Cha:</label-1>
+<input type=tel id=fatherPhone required placeholder=0908123456 inputmode=numeric>
+</div>
+<div class=form-group>
+<label-1 for=motherPhone>SĐT Mẹ:</label-1>
+<input type=tel id=motherPhone required placeholder=0908123456 inputmode=numeric>
+</div>
+</div>
+<div class=form-group>
+<label-1 for=address>Địa chỉ nhà:</label-1>
+<input id=address required placeholder="Nhập địa chỉ">
+</div>
+</div>
+<div class="section red-theme class-section">
+<div class=section-title><i class="fas fa-church"></i> Xếp Lớp Năm Học Mới</div>
+<div class=form-row>
+<div class=form-group>
+<label-1 required for=classRegistration>Chọn lớp:</label-1>
+<select id=classRegistration disabled>
+<option value="">Vui lòng chọn khối đăng ký trước</option>
+</select>
+</div>
+<div class=form-group>
+<label-1 for=nameGLV>GLV nhập liệu:</label-1>
+<input id=nameGLV required>
+</div>
+</div>
+</div>
+<div class=form-group>
+<label-1 for=notes>Ghi chú:</label-1>
+<textarea id=notes rows=3 placeholder="Nhập ghi chú (nếu có)"></textarea>
+</div>
+<button type=submit class=btn-submit><i class="fas fa-paper-plane"></i> Gửi Đăng Ký</button>
+</form>
+<div id=message class=message></div>
+</div>
+</div>
+<div id=parishModal class=modal-overlay aria-hidden=true>
+<div class=modal role=dialog aria-modal=true aria-labelledby=parishModalTitle>
+<button type=button class=modal-close aria-label=Đóng>&times;</button>
+<h3 id=parishModalTitle>TRƯỜNG HỢP KHÔNG CÓ SỐ</h3>
+<a href=assets/giao-ho-2.png data-lightbox=parishGallery data-title="Ảnh 1: Mẫu sổ giáo họ">
+<img src=assets/giao-ho-2.png alt=Ảnh style=max-width:100%;border-radius:6px>
+</a>
+</div>
+</div>
+<div id=registrationModal class=modal-overlay>
+<div class=modal-content>
+<div class=modal-header>
+<div class=header-left>
+<h2>DANH SÁCH ĐĂNG KÝ THÀNH CÔNG</h2>
+<div id=statsContainer class=stats-card>
+<div class=stats-controls>
+<label-3 for=khoiSelect>Khối:</label-3>
+<select id=khoiSelect>
+<option value="">Tất cả</option>
+</select>
+<div class=stats-meta>Tổng: 0 bản ghi</div>
+</div>
+<div class=stats-chips></div>
+</div>
+</div>
+<div class=header-controls>
+<div class=search-container>
+<input id=searchInput placeholder="Tìm kiếm thông tin...">
+</div>
+<button id=scrollToTopButton class=scroll-button title="Cuộn lên đầu">
+<svg xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<button id=reloadButton class=reload-button title="Tải lại danh sách">
+<svg xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+</button>
+<span class=close-button>&times;</span>
+</div>
+</div>
+<div class=modal-body>
+<div id=registrationList></div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js></script>
+<script src=app.js></script>
+<script src=registration.js></script>
+<div class="corner-image-container desktop-only">
+<img src=assets/corner-image.png alt="Hình góc dưới phải">
+<button class=list-button title="Xem danh sách" id=showRegistrationList>
+<svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24" fill=white width=24px height=24px><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+</button>
+</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
